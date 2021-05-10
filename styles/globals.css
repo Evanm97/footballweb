@@ -5,16 +5,11 @@
 @layer base {
   body {
     @apply bg-[#06202A] text-gray-300 overflow-y-scroll
-    /* #06202A */
   }
 }
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-body {
-  background-image: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80";
 }
 
 .ReactModal__Overlay {
@@ -39,19 +34,37 @@ body {
   background: rgba(0, 0, 0, 0.85) !important;
 }
 
-.ReactModal__Content.ReactModal__Content--after-open {
+/* .ReactModal__Content.ReactModal__Content--after-open {
   background: #06202ABF;
   transition: color 0.2s ease;
+} */
+
+div.image-container {
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+  overflow: hidden;
 }
 
-div.stretchy-wrapper{
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 */
-    position: relative;
-    overflow: hidden;
+div.image-container > div {
+  position: absolute;
+  top: -16.75%;
+  bottom: -16.75%;
+  left: 0;
+  right: 0;
 }
 
-div.stretchy-wrapper > div {
-    position: absolute;
-    top: -16.75%; bottom: -16.75%; left: 0; right: 0;
+div.iframe-container {
+  width: 100%;
+  padding-bottom: 51%;
+  position: relative;
+  overflow: hidden;
+}
+
+div.iframe-container > div {
+  position: absolute;
+  top: -14%;
+  bottom: -5%;
+  left: 0;
+  right: 0;
 }
