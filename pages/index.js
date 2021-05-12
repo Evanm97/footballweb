@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Nav from '../components/Nav'
 import Results from '../components/Results'
-import requests from '../utils/requests';
 
 export default function Home({ results }) {
   return (
@@ -14,10 +13,9 @@ export default function Home({ results }) {
 
       <Header />
 
-      <Nav results={results} />
+      <Nav />
 
       <Results results={results} />
-
     </div>
   );
 }
@@ -25,7 +23,7 @@ export default function Home({ results }) {
 export async function getServerSideProps(context) {
 
   const id = context.query.id;
-  const top5Arr = ["ENGLAND: Premier League","GERMANY: Bundesliga", "SPAIN: La Liga", "ITALY: Serie A", "FRANCE: Ligue 1"]
+  const top5Arr = ["ENGLAND: Premier League", "GERMANY: Bundesliga", "SPAIN: La Liga", "ITALY: Serie A", "FRANCE: Ligue 1"]
 
   let data = await fetch(`https://www.scorebat.com/video-api/v1/`).then((res) => res.json());
 

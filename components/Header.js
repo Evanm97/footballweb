@@ -23,7 +23,6 @@ function Header() {
             <Image
                 className="object-contain"
                 src="/FootballWeb.png" width={500} height={200} />
-
         </header>
     )
 }
